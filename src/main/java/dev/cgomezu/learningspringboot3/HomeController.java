@@ -28,4 +28,9 @@ public class HomeController {
         videoService.create(newVideo);
         return "redirect:/";
     }
+
+    @GetMapping("/react")
+    public String react() {
+        return "react";
+    }
 }
