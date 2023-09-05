@@ -33,4 +33,11 @@ public class HomeController {
     public String react() {
         return "react";
     }
+
+    @PostMapping("/multi-field-search")
+    public String multiFieldSearch(@ModelAttribute VideoSearch videoSearch, Model model) {
+        List<VideoEntity> searchResults = videoService.search(videoSearch);
+        model.addAttribute("videos", searchResults);
+        return "index";
+    }
 }
